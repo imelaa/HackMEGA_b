@@ -1,4 +1,3 @@
-// src/firebase.config.ts
 import * as admin from 'firebase-admin';
 import { Injectable } from '@nestjs/common';
 
@@ -8,8 +7,8 @@ export class FirebaseService {
 
   constructor() {
     this.app = admin.initializeApp({
-      credential: admin.credential.applicationDefault(), // O usa otro método de autenticación
-      databaseURL: 'https://<your-database-name>.firebaseio.com',
+      credential: admin.credential.applicationDefault(), 
+      databaseURL:process.env.DATA_BASE_URL,
     });
   }
 
