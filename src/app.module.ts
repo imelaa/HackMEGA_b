@@ -1,9 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { WasteRecognitionModule } from './waste_recognition/waste_recognition.module';
 import { ConfigModule } from '@nestjs/config';
-import { UserRewardModule } from './user_reward/user_reward.module';
+
 
 @Module({
   imports: [
@@ -12,11 +10,9 @@ import { UserRewardModule } from './user_reward/user_reward.module';
       envFilePath: '.env',
     }),
     WasteRecognitionModule,
-    UserRewardModule,
-
 
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
